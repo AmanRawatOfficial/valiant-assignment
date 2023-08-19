@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    font-family: "Poppins", sans-serif;
+
+    min-height: 100vh;
+    line-height: 1.5;
+    font-size: 1.6rem;
+}
+
+button {
+    cursor: pointer;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+*:disabled {
+    cursor: not-allowed;
+}
+
+input:focus,
+button:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid #4ade80;
+    outline-offset: -1px;
+}
