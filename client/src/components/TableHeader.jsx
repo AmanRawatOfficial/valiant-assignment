@@ -9,8 +9,8 @@ export default function TableHeader() {
             <div>Student</div>
             <div>Date</div>
             <div>Time</div>
-            <div>👁️ Resume</div>
-            <div>👇 Resume</div>
+            <div>Resume</div>
+            <div>Resume</div>
         </header>
     );
 }

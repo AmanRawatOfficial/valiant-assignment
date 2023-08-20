@@ -7,6 +7,7 @@ import FormRowVertical from "../components/FormRowVertical";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import FileInput from "../components/FileInput";
+import { toast } from "react-hot-toast";
 
 export default function MainStudent() {
     const [name, setName] = useState("");
@@ -32,19 +33,15 @@ export default function MainStudent() {
         fetch("http://127.0.0.1:8000/api/users/upload", {
             method: "POST",
             body: formData,
-            headers: {
-                // Set the correct Content-Type header
-                // It should be 'multipart/form-data'
-                "Content-Type": "multipart/form-data",
-            },
         })
             .then((response) => response.json())
-            .then((data) => {
+            .then(() => {
                 // Handle the response data
-                console.log(data);
+                toast.success("Uploaded successfully 👏");
             })
             .catch((error) => {
                 console.error("Error:", error);
+                toast.error("Uploaded failed 😭");
             });
 
         // Reset the form fields

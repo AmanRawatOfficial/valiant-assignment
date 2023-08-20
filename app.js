@@ -12,6 +12,7 @@ const app = express();
 app.use(express.json()); // body-parser
 app.use(morgan("dev"));
 app.use(cors());
+app.use(express.static(`${__dirname}/public`));
 
 app.use("/api/users", userRouter);
 
